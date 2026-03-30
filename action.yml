@@ -72,11 +72,11 @@ runs:
     # Install cargo-semver-checks with install-action instead of cargo-binstall
     # to avoid checking crates-io
     - name: Install cargo-semver-checks
-      uses: taiki-e/install-action@e9e8e031bcd90cdbe8ac6bb1d376f8596e587fbf # v2.70.2
+      uses: https://github.com/taiki-e/install-action@e9e8e031bcd90cdbe8ac6bb1d376f8596e587fbf # v2.70.2
       with:
         tool: cargo-semver-checks@0.46
     - name: Install cargo-binstall
-      uses: cargo-bins/cargo-binstall@0b24824336e2b3800b0f89d9e08b2c08bfa3dcdd # v1.17.9
+      uses: https://github.com/cargo-bins/cargo-binstall@0b24824336e2b3800b0f89d9e08b2c08bfa3dcdd # v1.17.9
       env:
         BINSTALL_VERSION: 1.17.8
     # Install release-plz using cargo-binstall instead of install-action because we
@@ -91,7 +91,7 @@ runs:
             --strategies=crate-meta-data,compile\
             --no-confirm
     - name: Configure git user from GitHub token
-      uses: release-plz/git-config@59144859caf016f8b817a2ac9b051578729173c4
+      uses: https://github.com/pureions/git-config@30477815fcc1cf03a13878cbd7e9e0603b0066be
     - name: Run release-plz
       id: release-plz
       shell: bash
