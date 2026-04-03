@@ -91,7 +91,9 @@ runs:
             --strategies=crate-meta-data,compile\
             --no-confirm
     - name: Configure git user from GitHub token
-      uses: https://github.com/pureions/git-config@30477815fcc1cf03a13878cbd7e9e0603b0066be
+      uses: https://github.com/pureions/git-config@b09b5c761d847197ee378e0e33075055a920ac92
+      with:
+        token: ${{ inputs.token }}
     - name: Run release-plz
       id: release-plz
       shell: bash
