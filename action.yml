@@ -94,6 +94,10 @@ runs:
       uses: https://github.com/pureions/git-config@80f960d499c6931ea8addef1e51785b78aa958d9
       with:
         token: ${{ inputs.token }}
+    - shell: bash
+      run: |
+          git config user.name
+          git config user.email
     - name: Run release-plz
       id: release-plz
       shell: bash
