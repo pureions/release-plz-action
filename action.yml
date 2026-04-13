@@ -167,8 +167,8 @@ runs:
             echo "-- Running release-plz release-pr --"
             release_pr_stderr=$(mktemp)
             if ! release_pr_output=$(release-plz release-pr\
-                --git-token "${RELEASE_TOKEN}"\
-                --repo-url "${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}.git"\
+                --git-token "${GITHUB_TOKEN}"\
+                --repo-url "${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}"\
                 "${CONFIG_PATH[@]}"\
                 "${ALT_REGISTRY[@]}"\
                 "${MANIFEST_PATH[@]}"\
