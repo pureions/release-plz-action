@@ -91,7 +91,7 @@ runs:
             --strategies=crate-meta-data,compile\
             --no-confirm
     - name: Configure git user from GitHub token
-      uses: https://github.com/pureions/git-config@b09b5c761d847197ee378e0e33075055a920ac92
+      uses: https://github.com/pureions/git-config@80f960d499c6931ea8addef1e51785b78aa958d9
       with:
         token: ${{ inputs.token }}
     - name: Run release-plz
@@ -168,6 +168,7 @@ runs:
             release_pr_stderr=$(mktemp)
             if ! release_pr_output=$(release-plz release-pr\
                 --git-token "${RELEASE_TOKEN}"\
+                --repo-url "${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}.git"\
                 "${CONFIG_PATH[@]}"\
                 "${ALT_REGISTRY[@]}"\
                 "${MANIFEST_PATH[@]}"\
